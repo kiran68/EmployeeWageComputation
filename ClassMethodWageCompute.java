@@ -1,6 +1,6 @@
 package com.bridgelabz.employeewagecomputation;
 
-public class ClassMethidWageCompute {
+public class ClassMethodWageCompute {
 	public static final int PARTTIME =1;
 	   public static final int FULLTIME = 2;
 	   public static final int EMP_RATE_PER_HOUR = 20;
