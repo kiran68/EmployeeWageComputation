@@ -8,9 +8,11 @@ interface IEmployeeWageComputation
     public void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs);
 
     public void calculateTotalWage();
+
+    public int getTotalEmpWage(String companyName);
 }
 
-class CompanyEmpWage
+class CompanyEmpWage 
 {
     // instance constants
     final String COMPANY_NAME;
@@ -20,6 +22,7 @@ class CompanyEmpWage
     // instance variable
     int totalEmpWage;
 
+    //parameterized constructor to get and set the values
     CompanyEmpWage(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs)
     {
         COMPANY_NAME = companyName;
@@ -29,14 +32,13 @@ class CompanyEmpWage
         totalEmpWage = 0;
     }
 
-    void setTotalEmployeeWage(int totalEmpWage)
+    void setTotalEmployeeWage(int totalEmpWage) 
     {
         this.totalEmpWage = totalEmpWage;
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         System.out.println("Details of " + COMPANY_NAME + " employee");
         System.out.println("-----------------------------------------------------");
         System.err.println("Wage per hour:" + WAGE_PER_HR);
@@ -45,4 +47,3 @@ class CompanyEmpWage
         return "Total wage for a month of " + COMPANY_NAME + " employee is " + totalEmpWage + "\n";
     }
 }
-
