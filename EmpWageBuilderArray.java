@@ -1,6 +1,10 @@
 package com.bridgelabz.employeewagecomputation;
 
-public class EmpWageBuilderArray {
+interface ComputeEmpWageMultiCompanies{
+	void addCompanyEmpWage(String company, int empRatePerHour, int numOFWorkingDyas, int maxHourPerMonth);
+	void computeEmpWage();
+}
+public class EmpWageBuilderArray implements ComputeEmpWageMultiCompanies {
 	private static final int IS_PART_TIME = 1;
 	private static final int IS_FULL_TIME = 2;
 
@@ -12,12 +16,12 @@ public class EmpWageBuilderArray {
 		companyEmpWageArray = new CompanyEmpWage[5];
 	}
 
-	private void addCompanyEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHourPerMonth) {
+	public void addCompanyEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHourPerMonth) {
 		companyEmpWageArray[numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHourPerMonth);
 		numOfCompany++;
 	}
 
-	private void computeEmpWage() {
+	public void computeEmpWage() {
 		for (int i = 0; i < numOfCompany; i++) {
 			companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
 			System.out.println(companyEmpWageArray[i]);
